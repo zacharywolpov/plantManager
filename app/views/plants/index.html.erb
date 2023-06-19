@@ -1,0 +1,23 @@
+<h1>Your Plants</h1>
+
+<ul>
+  <% @plants.each do |plant| %>
+    <li>
+      <%= link_to plant.plantType, plant %>
+    </li>
+  <% end %>
+
+  <%= link_to "Add Plant", new_plant_path %>
+</ul>
+
+<h1>Plants that Need Fertilizer</h1>
+
+<ul>
+  <% @plants.each do |plant| %>
+    <% if plant.needsFertilizer %>
+      <li>
+        <%= link_to plant.plantType, plant %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

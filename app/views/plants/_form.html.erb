@@ -1,0 +1,62 @@
+
+<%= form_with model: plant do |form| %>
+  <div>
+    <%= form.label :plantType %><br>
+    <%= form.text_field :plantType %>
+    <% plant.errors.full_messages_for(:plantType).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :plantDescription %><br>
+    <%= form.text_area :plantDescription %><br>
+    <% plant.errors.full_messages_for(:plantDescription).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :plantTips %><br>
+    <%= form.text_area :plantTips %><br>
+    <% plant.errors.full_messages_for(:plantTips).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :datePlanted %><br>
+    <%= form.text_area :datePlanted %><br>
+    <% plant.errors.full_messages_for(:datePlanted).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :lastFertilized %><br>
+    <%= form.text_area :lastFertilized %><br>
+    <% plant.errors.full_messages_for(:lastFertilized).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :numPlants %><br>
+    <%= form.text_area :numPlants %><br>
+    <% plant.errors.full_messages_for(:numPlants).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :needsFertilizer %><br>
+    <%= form.text_area :needsFertilizer %><br>
+    <% plant.errors.full_messages_for(:needsFertilizer).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

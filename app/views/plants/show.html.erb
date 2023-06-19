@@ -1,0 +1,29 @@
+<h1><%= @plant.plantType %></h1>
+
+<p><%= "Plant Description: #{@plant.plantDescription}" %></p>
+
+<p><%= "Plant Tips: #{@plant.plantTips}" %></p>
+
+<%= "Date Planted: #{@plant.datePlanted.to_time.strftime('%B %e, %Y')}"  %>
+
+<p><%= "Date Last Fertilized: #{@plant.lastFertilized.to_time.strftime('%B %e, %Y')}"  %></p>
+
+<p><%= "Number of Plants: #{@plant.numPlants}" %></p>
+
+
+
+<%# Increment button used to increment the number of plants of a plant type.
+    Routes to the increment method of plants_controller. %>
+<p><%= button_to "Add Plant",  increment_plant_path(@plant), method: :put %></p>
+
+<%# Decrement button used to decrement the number of plants of a plant type.
+    Routes to the decrement method of plants_controller. %>
+<p><%= button_to "Remove Plant",  decrement_plant_path(@plant), method: :put %></p>
+
+<p><%= "Needs Fertilizer: #{@plant.needsFertilizer ? "Yes" : "No"}" %></p>
+
+
+
+<p><%= link_to "Edit Plant", edit_plant_path %></p>
+
+<p><%= link_to "Return Home", plants_path %></p>
